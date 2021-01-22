@@ -1,0 +1,6 @@
+#!/bin/bash
+# Pandoc Markdown to HTML Script by Felix Münscher
+filename=$(basename -- "$1")
+extension="${filename##*.}"
+filename="${filename%.*}"
+pandoc $1 -s -H css/markdown_pandoc.css -f markdown_github-hard_line_breaks -t html -o $filename.html
